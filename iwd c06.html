@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+
+    <h1>Grade Calculator</h1>
+
+    <form id="gradeForm">
+        <label for="cs1000">CS1000 Fundamentals of Programming with C Practical:</label>
+        <input type="number" id="cs1000" name="cs1000" required><br>
+
+      
+
+        <button type="button" onclick="calculateGrades()">Calculate Grades</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateGrades() {
+         
+            const cs1000 = parseInt(document.getElementById('cs1000').value);
+            
+            const totalMarks = cs1000 ;
+
+            
+            let grade;
+            if (totalMarks >= 90) {
+                grade = 'O: Outstanding';
+            } else if (totalMarks >= 80) {
+                grade = 'A+: Excellent';
+            } else if (totalMarks >= 70) {
+                grade = 'A: Very Good';
+            } else if (totalMarks >= 60) {
+                grade = 'B+: Good';
+            } else if (totalMarks >= 50) {
+                grade = 'Above Average';
+            } else if (totalMarks >= 45) {
+                grade = 'C: Average';
+            } else if (totalMarks >= 40) {
+                grade = 'P: Pass';
+            } else {
+                grade = 'F: Fail';
+            }
+
+           
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `<p>Total Marks: ${totalMarks}</p><p>Grade: ${grade}</p>`;
+        }
+    </script>
+
+</body>
+</html>
